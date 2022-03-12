@@ -1,11 +1,12 @@
-export const actionType = {
+export const type = {
     changeUserName: "changeUserName",
     createUser: "createUser",
     deleteUser: "deleteUser",
 
     logIn: "logIn",
     logOut: "logOut",
+    lastLoging: "lastLoging",
 
-    setDarkMode: "setDarkMode",
+    setColorMode: "setColorMode",
     setLanguage: "setLanguage"
 }

@@ -1,0 +1,42 @@
+.create__avatar-section {
+    background-color: lightcyan;
+    width: 100%;
+}
+
+.create__color-pallette {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    height: 100px;
+}
+
+.create__buttons {
+position:absolute;
+width: 100%;
+left: 0;
+bottom: 40px;
+display:flex;
+justify-content: space-evenly;
+
+}
+
+
+
+
+
+
+
+
+
+.avatar-color {
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.avatar-color:hover {
+    transform: scale(2);
+    margin: 10px;
+}

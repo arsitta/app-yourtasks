@@ -1,38 +1,47 @@
-import { actionType } from "../actions/actionType";
-import { dataDefault } from "../data/dataDefault";
-import { userDefault } from "../data/userDefault";
+import { type } from "../actions/type";
+import { defaultData } from "../data/defaultData";
+import { defaultEmptyUser, defaultUserConfig } from "../data/defaultUser";
 
 export const initAppDataReducer = () => {
-    return JSON.parse(localStorage.getItem('app-yourtasks')) || dataDefault;
+    return JSON.parse(localStorage.getItem('app-yourtasks')) || defaultData;
 }
 
-export const appDataReducer = (appData = dataDefault, action) => {
-
+export const appDataReducer = (appData = defaultData, action) => {
+    console.log(action);
     const newAppData = { ...appData };
 
-    switch (action.actionType) {
+    switch (action.type) {
 
-        case actionType.changeUserName:
-            newAppData.database["user" + action.payload.user].config.name = action.payload.newName;
+        case type.changeUserName:
+            newAppData.database[action.payload.user].config.name = action.payload.newName;
             return newAppData;
 
-        case actionType.createUser:
-            newAppData.database["user" + action.payload.user].config.name = action.payload.newName;
-            newAppData.database["user" + action.payload.user].created = true;
+        case type.createUser:
+            newAppData.database[action.payload.user].config.name = action.payload.newName;
+            newAppData.database[action.payload.user].created = true;
             return newAppData;
 
-        case actionType.deleteUser:
-            newAppData.database["user" + action.payload.user] = { ...userDefault }
+        case type.deleteUser:
+            newAppData.database[action.payload.user].created = false;
+            newAppData.database[action.payload.user].config = { ...defaultUserConfig };
+            newAppData.database[action.payload.user].tasks = [];
             return newAppData;
 
-        case actionType.logIn:
-            newAppData.logged.state = true;
+        case type.logIn:
+            newAppData.system.logged = true;
             return newAppData;
 
-        case actionType.logOut:
-            newAppData.logged.state = false;
+        case type.logOut:
+            newAppData.system.logged = false;
             return newAppData;
 
+        case type.setColorMode:
+            newAppData.system.darkmode = !newAppData.system.darkmode;
+            return newAppData;
+
+        case type.setLanguage:
+            newAppData.system.language = action.payload.state;
+            return newAppData;
 
         default:
             return newAppData;

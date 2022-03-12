@@ -1,0 +1,101 @@
+//*------------Public-Screen----------*//
+.public__screen {
+    display:grid;
+    border-radius: 30px;
+    grid-template-columns: repeat(2, minmax(320px, 400px));
+    grid-template-rows: 40px 450px;
+    grid-template-areas: "loginInfo configBar"
+                         "loginInfo screen";
+    justify-content: center;
+    margin-top: 30px;
+    overflow: hidden;
+    width: min-content;
+    
+    background: #cccccc;
+    box-shadow:  12px 12px 24px #bababa,
+                 -12px -12px 24px #dedede;
+                 
+    background-color: $accounts-container;
+}
+
+//*------------InfoSection----------*//
+.public__info-container{
+    align-items: center;
+    background-color: $info-container;
+    display:flex;
+    flex-direction: column;
+    grid-area: loginInfo;
+    justify-content: center;
+    padding: 40px 20px;
+    position:relative;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.public__info-desc {
+    color: #eaeef7;
+    z-index: 3;
+}
+
+.public__info-tittle {
+    margin: 15px 0 5px 0;
+    z-index: 3;
+    color: #eaeef7;
+}
+
+.public__info-picture {
+    background-color: $info-picture;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 0 70px;
+    z-index: 3;
+
+}
+
+.public__info-deco-1{
+    width: 320px;
+    height: 320px;
+    background-color:transparent;
+    border: 0;
+    outline: 3px solid #8c97d6;
+    border-radius: 50%;
+    position:absolute;
+    top:-30px;
+    right:-90px;
+    z-index: 2;
+}
+
+.public__info-deco-2{
+    width: 250px;
+    height: 250px;
+    background-color:#8389d6;
+    border-radius: 50%;
+    position:absolute;
+    top: -100px;
+    left:-100px;
+}
+
+.public__info-deco-3{
+    width: 320px;
+    height: 320px;
+    background-color:#6d73cb;
+    border: 0;
+    border-radius: 50%;
+    position:absolute;
+    bottom:-90px;
+    right:-90px;
+}
+
+
+//*------------configurationBar----------*//
+.public__config-bar {
+    background-color: $configurationBar;
+    display: flex;
+    flex-direction: row;
+    grid-area: configBar;
+    height: 100%;
+    justify-content: end;
+    padding: 5px;
+    width: 100%;
+}

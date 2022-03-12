@@ -1,0 +1,47 @@
+
+
+
+//*------------LoginAccountsScreens----------*//
+.login__accounts-container {
+    background-color: $accounts-container;
+    grid-area: screen;
+    padding: 30px;
+    position:relative;
+    width: 100%;
+}
+
+.login__new-account-banner {
+    background-color: $new-account-banner;
+    bottom: 30px;
+    height: 50px;
+    left:30px;
+    position:absolute;
+    right:30px;
+}
+
+//*------------LoginAccount----------*//
+.login__account {
+    display:flex;
+    flex-direction: row; 
+    margin: 15px 0;
+}
+
+.login__account:hover {
+    background-color: $primary-violet;
+    cursor:pointer;
+}
+
+.login__account-avatar {
+    background-color: $account-avatar;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+}
+
+.login__account-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+}
+

@@ -1,0 +1,21 @@
+.btn {
+    border: none;
+    border-radius: 8px;
+    cursor:pointer;
+    padding:12px 26px;
+}
+
+.btn-primary {
+    background-color: $primary-violet;
+}
+
+.btn-primary:hover {
+    background-color: lighten($color: $primary-violet, $amount: 6);
+    transition: all 100ms linear;
+}
+
+.btn-disabled {
+}
+
+.btn-outline {
+}

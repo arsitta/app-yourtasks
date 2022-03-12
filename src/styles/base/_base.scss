@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+html,body {
+    height: 100vh;
+    width: 100vw;
+    background-color: $white-back;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    width: 100%;
+}
+
+h1 {
+    font-size:$xl;
+}
+
+p {
+    font-size: $md;
+}
+
+//-----------------------Text---------------------//
+.center {
+    text-align: center;
+}
+.lg {
+    font-size:$lg;
+}
+.md {
+    font-size:$md;
+}
+.sm {
+    font-size:$sm;
+}
+
+
+//-----------------------Margenes---------------------//
+@for $i from 1 through 5 {
+    .mt-#{$i} {
+        margin-top: $i * 5px;
+    }
+}
+
+@for $i from 1 through 5 {
+    .mb-#{$i} {
+        margin-bottom: $i * 5px;
+    }
+}
+
+@for $i from 1 through 5 {
+    .mr-#{$i} {
+        margin-right: $i * 5px;
+    }
+}
+
+@for $i from 1 through 5 {
+    .ml-#{$i} {
+        margin-left: $i * 5px;
+    }
+}
+
+
+
+
