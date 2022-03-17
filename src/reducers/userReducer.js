@@ -17,7 +17,8 @@ export const appDataReducer = (appData = defaultData, action) => {
             return newAppData;
 
         case type.createUser:
-            newAppData.database[action.payload.user].config.name = action.payload.newName;
+            newAppData.database[action.payload.user].config.first = action.payload.first;
+            newAppData.database[action.payload.user].config.last = action.payload.last;
             newAppData.database[action.payload.user].created = true;
             return newAppData;
 
@@ -25,13 +26,7 @@ export const appDataReducer = (appData = defaultData, action) => {
             newAppData.database[action.payload.user].created = false;
             newAppData.database[action.payload.user].config = { ...defaultUserConfig };
             newAppData.database[action.payload.user].tasks = [];
-            return newAppData;
-
-        case type.logIn:
-            newAppData.system.logged = true;
-            return newAppData;
-
-        case type.logOut:
+            newAppData.system.user = action.payload.user;
             newAppData.system.logged = false;
             return newAppData;
 
@@ -39,8 +34,14 @@ export const appDataReducer = (appData = defaultData, action) => {
             newAppData.system.darkmode = !newAppData.system.darkmode;
             return newAppData;
 
-        case type.setLanguage:
-            newAppData.system.language = action.payload.state;
+        case type.logUser:
+            newAppData.system.user = action.payload.user;
+            newAppData.system.logged = true;
+            return newAppData;
+
+        case type.deslogUser:
+            newAppData.system.user = action.payload.user;
+            newAppData.system.logged = false;
             return newAppData;
 
         default:

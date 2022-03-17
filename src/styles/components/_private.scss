@@ -1,0 +1,8 @@
+.private__screen {
+    width: 100vw;
+    max-width: 1300px;
+    background-color: red;
+
+    display: grid;
+    grid-template-columns: minmax(310px, 3fr) 9fr;
+}

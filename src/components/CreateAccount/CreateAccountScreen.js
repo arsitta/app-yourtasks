@@ -1,18 +1,23 @@
-import React, { useContext } from 'react'
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import React, { useContext, useEffect, useMemo } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom';
 
 import { AppContext } from '../../routers/MainRouter'
-import { defaultColorsAvatar } from '../../data/defaultData';
 import { getNumberOfAccountsEmpties } from '../../helpers/getNumberOfAccounts';
-import { createNewAccount } from '../../helpers/createNewAccount';
+import { InputText } from './InputText';
+import { AutocompleteUserData } from './AutocompleteUserData';
+import { TextTraslated } from '../traslation/TextTraslated';
+import { RandomAvatars } from './RandomAvatars';
+import { getNewAccount } from '../../helpers/handleCreateAccout/getNewAccount';
 
 export const CreateAccountScreen = () => {
 
-  const [appData, dispatch] = useContext(AppContext);
-
+  const [appData, dispatch, logged, setLogged, language, setLanguage] = useContext(AppContext);
   const nAccountsEmpties = getNumberOfAccountsEmpties(appData);
-
   const navigate = useNavigate();
+  const createUserId = appData.database.indexOf(appData.database.find(e => e.created == false));
+
+
+
   const handleBack = () => {
     navigate('/login/')
   }
@@ -21,35 +26,41 @@ export const CreateAccountScreen = () => {
     ?
     <div className='login__accounts-container'>
 
-      <h1 className='center lg'>Create your account:</h1>
 
-      <Link to="/">
-        <p className='center sm'>
-          Completar con datos aleatorios
-        </p>
-      </Link>
+      <TextTraslated text={"create-your-account"} className='center lg' tag="h1" language={language} />
 
 
-      <label>
-        <p style={{ marginTop: '30px' }}>Your name:</p>
-        <input className={'textbox'} placeholder={"Joe"} type={'text'} id={"name"} autocomplete="off"/>
-      </label>
+      <AutocompleteUserData>
+        <TextTraslated language={language} text={"autocomplete-user"} className={'center sm'} />
+      </AutocompleteUserData>
+
+      <InputText
+        title={<TextTraslated text={'first-name'} className={'mt-6'} language={language} />}
+        placeholder={'Joe'}
+        id={'firstName'}
+      />
+
+      <InputText
+        title={<TextTraslated text={'last-name'} className={'mt-4'} language={language} />}
+        placeholder={'Doe'}
+        id={'lastName'}
+      />
 
       <div className='create__avatar-section mt-5'>
-
-        <p>Select your avatar color:</p>
-
-        <div className='create__color-pallette'>
-          {defaultColorsAvatar.map((e) => <div key={e} className='avatar-color' style={{ backgroundColor: e }}></div>)}
-        </div>
-
+        <RandomAvatars>
+          <TextTraslated text={'select-avatar'} language={language} tag={'none'}/>
+          <TextTraslated text={'generate-avatars'} language={language} tag={'none'}/>
+        </RandomAvatars>
       </div>
 
       <div className='create__buttons mt-5'>
-        <button className='btn' onClick={handleBack}>Volver</button>
-        <button className='btn btn-primary' onClick={handleBack}>Crear cuenta</button>
+        <button className='btn' onClick={handleBack}>
+          <TextTraslated text={'back'} language={language} tag={'none'} />
+        </button>
+        <button className='btn btn-primary' onClick={() => getNewAccount({ dispatch, createUserId })}>
+          <TextTraslated text={'create-account'} language={language} tag={'none'} />
+        </button>
       </div>
-
     </div>
     :
     <Navigate to={'/login'} />

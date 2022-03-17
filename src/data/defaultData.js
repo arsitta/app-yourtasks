@@ -2,10 +2,9 @@ import { defaultActiveUser } from "./defaultUser";
 
 export const defaultData = {
     system: {
-        logged: false,
-        user: 0,
+        user: "x",
         darkmode: false,
-        language: "ESP",
+        logged: false,
     },
     database: [
         { ...defaultActiveUser},
@@ -13,10 +12,3 @@ export const defaultData = {
         { ...defaultActiveUser },
     ]
 }
-
-export const defaultColorsAvatar = [
-    "#003a5d",
-    "#5c0014",
-    "#d9b72b"
-]
-// { ...defaultEmptyUser }

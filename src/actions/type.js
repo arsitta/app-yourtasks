@@ -3,10 +3,11 @@ export const type = {
     createUser: "createUser",
     deleteUser: "deleteUser",
 
-    logIn: "logIn",
-    logOut: "logOut",
+    logUser: "logUser",
+    deslogUser: "deslogUser",
+
+
     lastLoging: "lastLoging",
 
     setColorMode: "setColorMode",
-    setLanguage: "setLanguage"
 }

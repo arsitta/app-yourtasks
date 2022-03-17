@@ -5,14 +5,14 @@ import { AppContext } from '../routers/MainRouter'
 
 export const PublicConfigBar = () => {
 
-  const [appData, dispatch] = useContext(AppContext);
+  const [appData, dispatch, logged, setLogged, language, setLanguage] = useContext(AppContext);
 
   const setColorMode = () => {
     dispatch({ type: "setColorMode" });
   }
 
-  const setLanguage = (lang) => {
-    dispatch({ type: "setLanguage", payload: { state: lang } });
+  const changeLanguage = (lan) => {
+    setLanguage(lan);
   }
 
 
@@ -21,13 +21,13 @@ export const PublicConfigBar = () => {
     <div className='public__config-bar'>
 
       {
-        (appData.system.language == "ESP") ?
-          <div onClick={() => setLanguage("ENG")} style={{ cursor:"pointer", width: "30px", height: "30px", marginRight: "5px", display:"flex", justifyContent:"center", alignItems:"center" }}>ENG</div>
+        (language == "ES") ?
+          <div onClick={() => changeLanguage("EN")} style={{ cursor: "pointer", width: "30px", height: "30px", marginRight: "5px", display: "flex", justifyContent: "center", alignItems: "center" }}>ES</div>
           :
-          <div onClick={() => setLanguage("ESP")} style={{ cursor:"pointer", width: "30px", height: "30px", marginRight: "5px", display:"flex", justifyContent:"center", alignItems:"center" }}>ESP</div>
+          <div onClick={() => changeLanguage("ES")} style={{ cursor: "pointer", width: "30px", height: "30px", marginRight: "5px", display: "flex", justifyContent: "center", alignItems: "center" }}>EN</div>
       }
 
-      <div style={{cursor:"pointer", width: "30px", height: "30px", marginRight: "5px", display:"flex", justifyContent:"center", alignItems:"center" }}>
+      <div style={{ cursor: "pointer", width: "30px", height: "30px", marginRight: "5px", display: "flex", justifyContent: "center", alignItems: "center" }}>
 
         {appData.system.darkmode ?
           <FontAwesomeIcon icon={faMoon} size={"2x"} onClick={setColorMode} />

@@ -1,12 +1,14 @@
 export const defaultUserConfig = {
-    name: "",
+    first: "x",
+    last: "y",
     lastLoging: "0",
 }
 
 export const defaultActiveUser = {
     created: true,
     config: {
-        name: "Ariel",
+        first: "Ariel",
+        last: "Sitta",
         lastLoging: 2,
     },
     tasks: [

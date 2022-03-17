@@ -1,14 +1,12 @@
 .create__avatar-section {
-    background-color: lightcyan;
     width: 100%;
 }
 
-.create__color-pallette {
+.create__avatars-container {
+    height: 90px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: green;
-    height: 100px;
 }
 
 .create__buttons {
@@ -17,26 +15,52 @@ width: 100%;
 left: 0;
 bottom: 40px;
 display:flex;
+align-items: center;
 justify-content: space-evenly;
 
 }
 
-
-
-
-
-
-
-
-
-.avatar-color {
+.create__random-avatar {
     margin: 10px;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
+    background-size: contain; 
+    transition: all 300ms linear;
     border-radius: 50%;
+    position: relative;
+
 }
 
-.avatar-color:hover {
-    transform: scale(2);
-    margin: 10px;
+.create__random-avatar:hover {
+    transition: all 200ms linear;
+        // width: 70px;
+    // height: 70px;
+    // border-radius: 50%;
 }
+  
+  .create__random-avatar-selected::before,
+  .create__random-avatar-selected::after {
+    animation: pulse 2s linear infinite;
+    border: $primary-violet solid 8px;
+    border-radius: 9999px;
+    box-sizing: border-box;
+    content: ' ';
+    height: 140%;
+    left: -20%;
+    opacity: .6;
+    position: absolute;
+    top: -20%;
+    transform: scale(0.8);
+    width: 140%;
+    z-index: 1;
+  }
+  .create__random-avatar::after {
+    animation-delay: 1s;
+  }
+
+  @keyframes pulse {
+    to {
+      opacity: 0;
+      transform: scale(1.1);
+    }
+  }

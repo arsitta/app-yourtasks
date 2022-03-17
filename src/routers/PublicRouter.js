@@ -7,8 +7,8 @@ import { LoginAccountScreen } from '../components/LoginAccount/LoginAccountScree
 import { PublicScreen } from '../PublicScreen/PublicScreen';
 
 export const PublicRouter = () => {
-  const [appData, dispatch] = useContext(AppContext);
-
+  const [appData, dispatch, logged, setLogged, language, setLanguage] = useContext(AppContext);
+  
   return appData.system.logged
     ?
     <Navigate to={'/'} />

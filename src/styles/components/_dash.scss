@@ -1,0 +1,20 @@
+.dash__task-card{
+     display:flex;
+     justify-content: center;
+    flex-direction: column;
+    width: 130px;
+    height: 130px;
+    padding: 20px;
+    background-color: blue;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.dash__all-lists{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 310px;
+    background-color: green;
+}
