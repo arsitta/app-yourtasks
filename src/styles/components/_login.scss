@@ -5,7 +5,7 @@
 .login__accounts-container {
     background-color: $accounts-container;
     grid-area: screen;
-    padding: 30px;
+    padding: 28px 30px;
     position:relative;
     width: 100%;
 }
@@ -28,11 +28,13 @@
 
 .login__account:hover {
     background-color: $primary-violet;
+    background-size: contain;
     cursor:pointer;
 }
 
 .login__account-avatar {
     background-color: $account-avatar;
+    background-size: contain;
     border-radius: 50%;
     height: 60px;
     width: 60px;
@@ -45,3 +47,11 @@
     margin-left: 10px;
 }
 
+.login__no-accounts-created {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgb(202, 202, 202);
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 30px;
+
+}

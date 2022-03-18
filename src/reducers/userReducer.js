@@ -19,6 +19,7 @@ export const appDataReducer = (appData = defaultData, action) => {
         case type.createUser:
             newAppData.database[action.payload.user].config.first = action.payload.first;
             newAppData.database[action.payload.user].config.last = action.payload.last;
+            newAppData.database[action.payload.user].config.avatar = action.payload.backgroundImage;
             newAppData.database[action.payload.user].created = true;
             return newAppData;
 

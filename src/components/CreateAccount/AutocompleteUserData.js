@@ -5,8 +5,8 @@ const requestRandomUser = () => {
     fetch("https://random-data-api.com/api/users/random_user")
         .then((r) => r.json())
         .then((r) => {
-            const firstName = document.getElementById("firstName");
-            const lastName = document.getElementById("lastName");
+            const firstName = document.getElementById("first-name");
+            const lastName = document.getElementById("last-name");
             firstName.value = r.first_name;
             lastName.value = r.last_name;
         })

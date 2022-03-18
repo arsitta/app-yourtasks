@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
 import { AppContext } from '../routers/MainRouter'
 
-export const PublicConfigBar = () => {
+export const ConfigBar = () => {
 
   const [appData, dispatch, logged, setLogged, language, setLanguage] = useContext(AppContext);
 

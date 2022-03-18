@@ -7,5 +7,10 @@
     border:none;
     padding:4px 12px;
     outline: none;
-    
+    text-transform: capitalize;
+}
+
+.textbox:focus{
+    outline: 1px solid $primary-violet;
+
 }

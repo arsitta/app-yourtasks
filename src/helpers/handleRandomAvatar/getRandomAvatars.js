@@ -9,7 +9,7 @@ export const getRandomAvatars = (nAvatars) => {
 }
 
 const getNewAvatar = (currentAvatar) => {
-    const idAvatar = Math.floor(Math.random() * (1000 - 1) + 1);
+    const idAvatar = Math.floor(Math.random() * (50 - 1) + 1);
     const urlFetch = `https://picsum.photos/id/${idAvatar}/100/100`;
 
     fetch(urlFetch)

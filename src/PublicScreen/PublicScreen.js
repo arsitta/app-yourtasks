@@ -1,12 +1,12 @@
 import React from 'react'
-import { PublicConfigBar } from './PublicConfigBar'
-import { PublicInfoSection } from './PublicInfoSection'
+import { ConfigBar } from './ConfigBar'
+import { InfoSection } from './InfoSection'
 
 export const PublicScreen = ({ children }) => {
     return (
         <section className="public__screen">
-            <PublicInfoSection />
-            <PublicConfigBar />
+            <InfoSection />
+            <ConfigBar />
             {children}
         </section>
     )

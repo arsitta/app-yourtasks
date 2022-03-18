@@ -3,7 +3,7 @@
     display:grid;
     border-radius: 30px;
     grid-template-columns: repeat(2, minmax(320px, 400px));
-    grid-template-rows: 40px 450px;
+    grid-template-rows: 40px 480px;
     grid-template-areas: "loginInfo configBar"
                          "loginInfo screen";
     justify-content: center;
